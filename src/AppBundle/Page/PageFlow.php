@@ -36,15 +36,14 @@ class PageFlow
     //TODO don't add upsell page if it doesn't meet upsell requirements
     private function createPages($pageFlow)
     {
-        echo '??!?!?!?!?!?!CURRENT PAGE ISS: '.print_r($pageFlow,1);
         $nextPage = null;
         $pageObject = null;
         foreach(array_reverse($pageFlow) as $page)
         {
-            echo '??!?!?!?!?!?!CURRENT PAGE ISS: '.$page;
             if(!$page === end($pageFlow))
             {
                 $pageObject = $this->getPageObject($page);
+                echo '??!?!?!?!?!?!PAGE OBJECT ISS: '.print_r($pageObject,1);
                 $pageObject->setNextPage($nextPage);
             }
             $nextPage = $pageObject;
