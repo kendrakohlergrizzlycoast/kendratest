@@ -12,7 +12,7 @@ $kernel->loadClassCache();
 //$kernel = new AppCache($kernel);
 
 $session = new Session();
-$sesssion->start();
+$session->start();
 $session->set('name', 'foo');
 
 // When using the HttpCache, you need to call the method in your front controller instead of relying on the configuration parameter
