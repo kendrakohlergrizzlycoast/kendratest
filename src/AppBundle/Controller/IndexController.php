@@ -17,6 +17,8 @@ class IndexController extends Controller
         $session = $request->getSession();
         $logger = $this->get('logger');
         
+        $logger->error('??!?!?!?!?!?!FOO ISS BEFORE ASSIGNMENT: '.$session->get('foo'));
+        
         $price = !$session->get('foo') ? 1 : $session->get('foo')+1;
         $session->set('foo',$price);
         $logger->error('??!?!?!?!?!?!FOO ISS: '.$session->get('foo'));
