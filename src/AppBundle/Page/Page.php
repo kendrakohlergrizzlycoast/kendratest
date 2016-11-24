@@ -5,8 +5,9 @@ class Page
 {
     protected $nextPage;
     protected $form;
+    protected $view;
     
-    protected function next()
+    protected function getNextPage()
     {
         return $this->nextPage;
     }
@@ -14,5 +15,15 @@ class Page
     protected function getForm()
     {
         return $this->form;
+    }
+    
+    protected function getView()
+    {
+        return $this->view;
+    }
+    
+    protected function setNextPage($nextPage)
+    {
+        $this->nextPage = $nextPage;
     }
 }
