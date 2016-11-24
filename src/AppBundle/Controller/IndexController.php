@@ -17,10 +17,8 @@ class IndexController extends Controller
     {
         //$session = $request->getSession();
         //$logger = $this->get('logger');
-        $pageFlow = new PageFlow(1);
-        
-        echo "PAGE FLOW: " . print_r($pageFlow->getCurrentPage()->getView(),1);
-        $cp = 1;
+        $cp = $request->get('cp');
+        $pageFlow = new PageFlow($cp);
         
         // replace this example code with whatever you need
         return $this->render("{$cp}/{$pageFlow->getCurrentPage()->getView()}.html.twig", ['foo' => 'bar']);

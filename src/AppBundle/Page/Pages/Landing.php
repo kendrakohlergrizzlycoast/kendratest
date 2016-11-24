@@ -8,6 +8,6 @@ class Landing extends Page
     public function __construct()
     {
         $this->form = 'landingForm';
-        $this->view = 'landingView';
+        $this->view = 'landing';
     }
 }
