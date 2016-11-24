@@ -36,6 +36,7 @@ class PageFlow
     //TODO remove upsell page if it doesn't meet upsell requirements
     private function createPages($pageFlow)
     {
+        $this->logger->error('??!?!?!?!?!?!CURRENT PAGE ISS: '.print_r($pageFlow,1));
         $nextPage = null;
         foreach(array_reverse($pageFlow) as $page)
         {
