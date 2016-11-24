@@ -8,6 +8,6 @@ class Lead extends Page
     public function __construct()
     {
         $this->form = 'leadForm';
-        $this->view = 'leadView';
+        $this->view = 'lead';
     }
 }

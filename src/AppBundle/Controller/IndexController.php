@@ -15,16 +15,14 @@ class IndexController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $session = $request->getSession();
-        $logger = $this->get('logger');
+        //$session = $request->getSession();
+        //$logger = $this->get('logger');
         $pageFlow = new PageFlow(1);
         
         echo "PAGE FLOW: " . print_r($pageFlow->getCurrentPage()->getView(),1);
+        $cp = 1;
         
-        $price = !$session->get('foo') ? 1 : $session->get('foo')+1;
-        $session->set('foo',$price); 
-        $foo = ['foo' => $pageFlow];
         // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', $foo);
+        return $this->render("{$cp}/{$pageFlow->getCurrentPage()->getView()}.html.twig", ['foo' => 'bar']);
     }
 }
