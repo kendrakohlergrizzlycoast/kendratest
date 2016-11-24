@@ -19,8 +19,6 @@ class IndexController extends Controller
         $logger = $this->get('logger');
         $pageFlow = new PageFlow(1);
         
-        //$logger->error('??!?!?!?!?!?!PAGE FLOW CURRENT: '.$pageFlow->getCurrentPage()->getView());
-        
         $price = !$session->get('foo') ? 1 : $session->get('foo')+1;
         $session->set('foo',$price); 
         $foo = ['foo' => $pageFlow];

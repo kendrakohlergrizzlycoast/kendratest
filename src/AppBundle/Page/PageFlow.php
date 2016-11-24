@@ -37,6 +37,7 @@ class PageFlow
         $nextPage = null;
         foreach(array_reverse($pageFlow) as $page)
         {
+            $logger->error('??!?!?!?!?!?!CURRENT PAGE ISS: '.$page);
             if(!$page === end($pageFlow))
             {
                 $pageObject = $this->getPageObject($page);
@@ -44,7 +45,7 @@ class PageFlow
             }
             $nextPage = $page;
         }
-        
+        $logger->error('??!?!?!?!?!?!PAGE OBJECT ISS: '.print_r($pageObject,1));
         return $pageObject;
     }
     
