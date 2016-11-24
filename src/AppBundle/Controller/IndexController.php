@@ -16,12 +16,8 @@ class IndexController extends Controller
     {
         $session = $request->getSession();
         
-        //$price = !$session->get('foo') ? 1 : $session->get('foo')+1;
-        $price = 1;
-        $session->set('foo',$price);
-        $foo = ['foo' => $session->get('foo'),'test' => 'BLAHBLAH'];
         // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', $foo,[
+        return $this->render('default/index.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ]);
     }
