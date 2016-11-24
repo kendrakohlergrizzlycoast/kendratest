@@ -19,7 +19,7 @@ class IndexController extends Controller
         $logger = $this->get('logger');
         $pageFlow = new PageFlow(1);
         
-        echo "PAGE FLOW: " . print_r($pageFlow->getView(),1);
+        echo "PAGE FLOW: " . print_r($pageFlow->getCurrentPage()->getView(),1);
         
         $price = !$session->get('foo') ? 1 : $session->get('foo')+1;
         $session->set('foo',$price); 
