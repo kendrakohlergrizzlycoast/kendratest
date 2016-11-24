@@ -73,4 +73,9 @@ class PageFlow
         
         return $pageObject;
     }
+    
+    __toString()
+    {
+        return print_r($this->currentPage,1);
+    }
 }
