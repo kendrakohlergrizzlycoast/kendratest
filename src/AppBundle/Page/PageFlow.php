@@ -45,9 +45,9 @@ class PageFlow
             if(!$page === end($pageFlow))
             {
                 $pageObject = $this->getPageObject($page);
-                $page->setNextPage($pageObject);
+                $pageObject->setNextPage($nextPage);
             }
-            $nextPage = $page;
+            $nextPage = $pageObject;
         }
         echo '??!?!?!?!?!?!PAGE OBJECT ISS: '.print_r($pageObject,1);
         return $pageObject;
