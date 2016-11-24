@@ -1,13 +1,16 @@
 <?php
 namespace AppBundle\Page;
 
+use AppBundle\Page\Page;
+
 class PageFlow
 {
-    private $orderedPages;
+    private $pages = [];
     private $currentPage;
 
-    public function __construct(Mailer $mailer)
+    public function __construct()
     {
+        
     }
 
     public function getCurrentPage()
