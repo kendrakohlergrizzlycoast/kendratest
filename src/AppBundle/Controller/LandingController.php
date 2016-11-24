@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class LandingController extends Controller
 {	
-	/**
+    /**
      * @Route("/landing", name="landing")
      */
     public function displayAction(Request $request)
