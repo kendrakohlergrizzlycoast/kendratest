@@ -36,11 +36,11 @@ class PageFlow
     //TODO remove upsell page if it doesn't meet upsell requirements
     private function createPages($pageFlow)
     {
-        $this->logger->error('??!?!?!?!?!?!CURRENT PAGE ISS: '.print_r($pageFlow,1));
+        echo '??!?!?!?!?!?!CURRENT PAGE ISS: '.print_r($pageFlow,1);
         $nextPage = null;
         foreach(array_reverse($pageFlow) as $page)
         {
-            $this->logger->error('??!?!?!?!?!?!CURRENT PAGE ISS: '.$page);
+            echo '??!?!?!?!?!?!CURRENT PAGE ISS: '.$page;
             if(!$page === end($pageFlow))
             {
                 $pageObject = $this->getPageObject($page);
@@ -48,7 +48,7 @@ class PageFlow
             }
             $nextPage = $page;
         }
-        $this->logger->error('??!?!?!?!?!?!PAGE OBJECT ISS: '.print_r($pageObject,1));
+        echo '??!?!?!?!?!?!PAGE OBJECT ISS: '.print_r($pageObject,1);
         return $pageObject;
     }
     
