@@ -33,11 +33,12 @@ class PageFlow
        $this->currentPage = $this->currentPage->getNextPage(); 
     }
     
-    //TODO remove upsell page if it doesn't meet upsell requirements
+    //TODO don't add upsell page if it doesn't meet upsell requirements
     private function createPages($pageFlow)
     {
         echo '??!?!?!?!?!?!CURRENT PAGE ISS: '.print_r($pageFlow,1);
         $nextPage = null;
+        $pageObject = null;
         foreach(array_reverse($pageFlow) as $page)
         {
             echo '??!?!?!?!?!?!CURRENT PAGE ISS: '.$page;
