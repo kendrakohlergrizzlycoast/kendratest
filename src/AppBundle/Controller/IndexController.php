@@ -6,6 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
+use AppBundle\Page\PageFlow;
 
 class IndexController extends Controller
 {
@@ -16,8 +17,9 @@ class IndexController extends Controller
     {
         $session = $request->getSession();
         $logger = $this->get('logger');
+        $pageFlow = new PageFlow(1);
         
-        //$logger->error('??!?!?!?!?!?!FOO ISS BEFORE ASSIGNMENT: '.$session->get('foo'));
+        $logger->error('??!?!?!?!?!?!PAGE FLOW CURRENT: '.$pageFlow->getCurrentPage()->getView);
         
         $price = !$session->get('foo') ? 1 : $session->get('foo')+1;
         $session->set('foo',$price); 
