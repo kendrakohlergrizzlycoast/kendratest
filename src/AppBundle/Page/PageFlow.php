@@ -1,7 +1,6 @@
 <?php
 namespace AppBundle\Page;
 
-use AppBundle\Page\Page;
 use AppBundle\Page\Pages\Landing;
 use AppBundle\Page\Pages\Lead;
 use AppBundle\Page\Pages\Sale;
@@ -10,14 +9,7 @@ use AppBundle\Page\Pages\ThankYou;
 
 class PageFlow
 {
-    private $pages = [];
     private $currentPage;
-    
-    const LANDING = 1;
-    const LEAD = 2;
-    const SALE = 3;
-    const UPSELL = 4;
-    const THANK_YOU = 5;
     
     const CP_PAGE_FLOW = [  1 => ['lead','sale', 'upsell', 'ty'],
                             2 => ['landing','lead','sale', 'ty']];
@@ -25,7 +17,8 @@ class PageFlow
     public function __construct($cp)
     {   
         $cp ?: 1;
-        $this->pages = $this->createPages(self::CP_PAGE_FLOW[$cp]);
+        $this->currentPage = $this->createPages(self::CP_PAGE_FLOW[$cp]);
+        
     }
 
     public function getCurrentPage()
@@ -51,6 +44,8 @@ class PageFlow
             }
             $nextPage = $page;
         }
+        
+        return $pageObject;
     }
     
     private function getPageObject($page)
