@@ -17,7 +17,7 @@ class IndexController extends Controller
     {
         $session = $request->getSession();
         $logger = $this->get('logger');
-        $pageFlow = new PageFlow(1);
+        $pageFlow = new PageFlow(1,$logger);
         
         $price = !$session->get('foo') ? 1 : $session->get('foo')+1;
         $session->set('foo',$price); 

@@ -10,14 +10,16 @@ use AppBundle\Page\Pages\ThankYou;
 class PageFlow
 {
     private $currentPage;
+    private $logger;
     
     const CP_PAGE_FLOW = [  1 => ['lead','sale', 'upsell', 'ty'],
                             2 => ['landing','lead','sale', 'ty']];
 
-    public function __construct($cp)
+    public function __construct($cp, $logger)
     {   
         $cp ?: 1;
         $this->currentPage = $this->createPages(self::CP_PAGE_FLOW[$cp]);
+        $this->logger = $logger;
         
     }
 
@@ -37,7 +39,7 @@ class PageFlow
         $nextPage = null;
         foreach(array_reverse($pageFlow) as $page)
         {
-            $logger->error('??!?!?!?!?!?!CURRENT PAGE ISS: '.$page);
+            $this->logger->error('??!?!?!?!?!?!CURRENT PAGE ISS: '.$page);
             if(!$page === end($pageFlow))
             {
                 $pageObject = $this->getPageObject($page);
@@ -45,7 +47,7 @@ class PageFlow
             }
             $nextPage = $page;
         }
-        $logger->error('??!?!?!?!?!?!PAGE OBJECT ISS: '.print_r($pageObject,1));
+        $this->logger->error('??!?!?!?!?!?!PAGE OBJECT ISS: '.print_r($pageObject,1));
         return $pageObject;
     }
     
