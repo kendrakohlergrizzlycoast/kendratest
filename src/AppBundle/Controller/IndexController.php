@@ -17,8 +17,7 @@ class IndexController extends Controller
         $session = $request->getSession();
         $logger = $this->get('logger');
         
-        //$price = !$session->get('foo') ? 1 : $session->get('foo')+1;
-        $price = 1;
+        $price = !$session->get('foo') ? 1 : $session->get('foo')+1;
         $session->set('foo',$price);
         $logger->error('??!?!?!?!?!?!FOO ISS: '.$session->get('foo'));
         $foo = ['foo' => $session->get('foo')];
