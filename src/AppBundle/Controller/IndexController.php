@@ -16,11 +16,12 @@ class IndexController extends Controller
     {
         $session = $request->getSession();
         $logger = $this->get('logger');
-        $logger->error('An error occurred');
+        $logger->error('??!?!?!?!?!?!An error occurred');
         
         //$price = !$session->get('foo') ? 1 : $session->get('foo')+1;
         $price = 1;
         $session->set('foo',$price);
+        $logger->error('??!?!?!?!?!?!FOO ISS: '.$session->get('foo'));
         $foo = ['foo' => $session->get('foo')];
         // replace this example code with whatever you need
         return $this->render('default/index.html.twig', $foo);
