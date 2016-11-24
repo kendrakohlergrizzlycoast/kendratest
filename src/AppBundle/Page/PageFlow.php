@@ -40,11 +40,9 @@ class PageFlow
         $pageObject = null;
         foreach(array_reverse($pageFlow) as $page)
         {
-            echo '??!?!?!?!?!?!PAGE '.$page.'END: ' .end($pageFlow) ;
             if($page !== end($pageFlow))
             {
                 $pageObject = $this->getPageObject($page);
-                echo '??!?!?!?!?!?!PAGE OBJECT ISS: '.print_r($pageObject,1);
                 $pageObject->setNextPage($nextPage);
             }
             $nextPage = $pageObject;
