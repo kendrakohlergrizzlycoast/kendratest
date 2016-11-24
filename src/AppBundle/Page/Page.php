@@ -7,22 +7,22 @@ class Page
     protected $form;
     protected $view;
     
-    protected function getNextPage()
+    public function getNextPage()
     {
         return $this->nextPage;
     }
     
-    protected function getForm()
+    public function getForm()
     {
         return $this->form;
     }
     
-    protected function getView()
+    public function getView()
     {
         return $this->view;
     }
     
-    protected function setNextPage($nextPage)
+    public function setNextPage($nextPage)
     {
         $this->nextPage = $nextPage;
     }
