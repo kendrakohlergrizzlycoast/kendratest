@@ -16,7 +16,6 @@ class IndexController extends Controller
     {
         $session = $request->getSession();
         $logger = $this->get('logger');
-        $logger->error('??!?!?!?!?!?!An error occurred');
         
         //$price = !$session->get('foo') ? 1 : $session->get('foo')+1;
         $price = 1;
