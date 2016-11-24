@@ -10,7 +10,7 @@ use AppBundle\Page\Pages\ThankYou;
 class PageFlow
 {
     private $currentPage;
-    private $logger;
+    protected $logger;
     
     const CP_PAGE_FLOW = [  1 => ['lead','sale', 'upsell', 'ty'],
                             2 => ['landing','lead','sale', 'ty']];
