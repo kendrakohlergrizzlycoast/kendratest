@@ -4,7 +4,7 @@ namespace AppBundle\Entity;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
-class Landing
+class LandingEntity
 {
     /**
      * @Assert\NotBlank()
