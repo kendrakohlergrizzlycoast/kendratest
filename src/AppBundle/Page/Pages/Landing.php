@@ -9,8 +9,8 @@ class Landing extends Page
 {
     public function __construct()
     {
-        $landing = new LandingEntity();
-        $this->form = $this->createForm(LandingType::class, $landing);
+        //$landing = new Lan
+        $this->form = 'test';//$this->createForm(LandingType::class, $landing);
         $this->view = 'landing';
     }
 }

@@ -25,6 +25,6 @@ class IndexController extends Controller
         $session->set('currentPage',$currentPage);
         
         // replace this example code with whatever you need
-        return $this->render("{$cp}/{$currentPage->getView()}.html.twig", ['foo' => 'bar', 'form' => $currentPage->getForm()]);
+        return $this->render("{$cp}/{$currentPage->getView()}.html.twig", ['foo' => 'bar', 'form' => 'test'/*$currentPage->getForm()*/]);
     }
 }
